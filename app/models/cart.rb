@@ -23,13 +23,8 @@ class Cart < ApplicationRecord
     end
   end
 
-  # Returns a hash of { "SKU1" => quantity1, "SKU2" => quantity2, … }
-  def items_hash
-    cart_items.includes(:product).map { |ci| [ci.product.sku, ci.quantity] }.to_h
-  end
-
   def total_price
-    CheckoutService.new(self).total
+    CheckoutService.call(self)
   end
 
   private
