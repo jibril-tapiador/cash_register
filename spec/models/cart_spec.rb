@@ -46,7 +46,7 @@ RSpec.describe Cart, type: :model do
     end
 
     it 'removes cart_item if quantity == 1' do
-      cart.remove_product_by_sku('GR1') # now quantity 1
+      cart.remove_product_by_sku('GR1')
       expect {
         cart.remove_product_by_sku('GR1')
       }.to change { cart.cart_items.count }.by(-1)

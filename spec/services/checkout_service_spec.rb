@@ -23,7 +23,6 @@ RSpec.describe CheckoutService do
   context 'buy-one-get-one-free on Green Tea' do
     it 'gives one free when 2 purchased' do
       add_items(cart, 'GR1', 2)
-      # Should be price of 1 * 3.11
       expect(CheckoutService.call(cart)).to eq(3.11)
     end
 
@@ -66,9 +65,9 @@ RSpec.describe CheckoutService do
 
   context 'combination of rules' do
     it 'applies multiple rules together' do
-      add_items(cart, 'GR1', 2) # pay for 1 => 3.11
-      add_items(cart, 'SR1', 3) # 3 * 4.50 => 13.50
-      add_items(cart, 'CF1', 3) # 3 * (11.23 * 2/3 ≈ 7.49) => 22.47
+      add_items(cart, 'GR1', 2)
+      add_items(cart, 'SR1', 3)
+      add_items(cart, 'CF1', 3)
       expected = 3.11 + 13.50 + 22.47
       expect(CheckoutService.call(cart)).to eq(expected.round(2))
     end
