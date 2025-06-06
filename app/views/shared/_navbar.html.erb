@@ -1,0 +1,11 @@
+<nav class="navbar">
+  <%= link_to 'Products', root_path, class: 'navbar-link' %>
+  <%= link_to 'Cart', cart_path, class: 'navbar-link' %>
+
+  <span>
+    Items in Cart:
+    <span class="cart-count">
+      <%= cart_item_count(session[:cart_id]) %>
+    </span>
+  </span>
+</nav>

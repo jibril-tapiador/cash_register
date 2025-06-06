@@ -1,0 +1,17 @@
+.navbar {
+  padding: $space-md;
+  background-color: $color-navbar-bg;
+  margin-bottom: $space-md;
+
+  display: flex;
+  align-items: center;
+}
+
+.navbar-link {
+  margin-right: $space-md;
+  font-weight: $font-weight-bold;
+}
+
+.navbar-counter {
+  color: $color-text-default;
+}
