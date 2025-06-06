@@ -89,7 +89,7 @@ This seeds three products:
 bin/dev
 ```
 
-Visit `http://localhost:3000` to browse products, add items to your cart, and see discounts applied in real time.
+Visit `http://localhost:5000` to browse products, add items to your cart, and see discounts applied in real time.
 
 ---
 
