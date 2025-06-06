@@ -1,0 +1,17 @@
+<h1>Our Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>SKU</th>
+      <th>Price (€)</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <%= render 'products/product_row', product: product %>
+    <% end %>
+  </tbody>
+</table>

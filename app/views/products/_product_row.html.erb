@@ -1,0 +1,8 @@
+<tr>
+  <td><%= product.name %></td>
+  <td><%= product.sku %></td>
+  <td><%= number_to_currency(product.price, unit: '€') %></td>
+  <td>
+    <%= button_to 'Add to Cart', add_cart_path(sku: product.sku) %>
+  </td>
+</tr>
