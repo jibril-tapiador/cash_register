@@ -1,0 +1,28 @@
+<h1>Your Cart</h1>
+
+<% if @cart_items.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>SKU</th>
+        <th>Quantity</th>
+        <th>Unit Price (€)</th>
+        <th>Subtotal (€)</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @cart_items.each do |cart_item| %>
+        <%= render 'carts/cart_row', ci: cart_item %>
+      <% end %>
+    </tbody>
+  </table>
+
+  <h2>Subtotal: <%= number_to_currency(@subtotal_price, unit: "€") %></
+  <br>
+  <h2>Total: <%= number_to_currency(@total, unit: "€") %>
+  </h2>
+<% else %>
+  <p>Your cart is empty. <%= link_to "Browse products", products_path %>.</p>
+<% end %>

@@ -27,6 +27,12 @@ class Cart < ApplicationRecord
     CheckoutService.call(self)
   end
 
+  def subtotal_price
+    cart_items.includes(:product).sum do |ci|
+      ci.product.price * ci.quantity
+    end.round(2)
+  end
+
   private
 
   def with_product(sku)

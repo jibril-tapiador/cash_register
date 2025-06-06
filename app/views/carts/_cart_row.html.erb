@@ -1,0 +1,10 @@
+<tr>
+  <td><%= ci.product.name %></td>
+  <td><%= ci.product.sku %></td>
+  <td><%= ci.quantity %></td>
+  <td><%= number_to_currency(ci.product.price, unit: "€") %></td>
+  <td><%= number_to_currency(ci.product.price * ci.quantity, unit: "€") %></td>
+  <td>
+    <%= button_to "Remove One", remove_cart_path(sku: ci.product.sku), method: :delete %>
+  </td>
+</tr>
